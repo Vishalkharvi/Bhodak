@@ -1,8 +1,9 @@
 from flask import Flask,render_template,request,url_for,redirect,flash,session
+import os
 import pymysql
 app = Flask(__name__)
 app.secret_key='secret'
-
+post=int(os.environ.get('PORT',5000))
 @app.route('/')
 @app.route('/login',methods=["post","get"])
 
@@ -453,4 +454,4 @@ def logout():
     
     
 if __name__=="__main__":
-    app.run(host="localhost",port="5000")
+    app.run(host="localhost",port=port,debug=False)
