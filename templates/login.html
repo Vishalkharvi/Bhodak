@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title> Login Page</title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+       <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+       <style>
+       body{
+          margin:0;
+          padding:0;
+          background:url("static/images/login_whatsapp.jpeg");
+	  
+          background-size: cover;
+          font-family: sans-serif;
+           }
+
+       h1.issue{    margin:0;
+          left:0px;
+          width:100%;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 25px;
+          font-family:AR JULIAN;
+          color:red;
+          }
+
+      .log{  width:1566px;
+          height:696px;
+          
+          }
+      .loginbox{  width: 320px;
+          height: 350px;
+          background: #0d5658;
+          color: #fff;
+          top:13%;
+          left:36%;
+          position:absolute;
+          transform: translate{-50%,-50%}
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity:.7;
+               }
+      .avatar{  width: 100px;
+          height: 100px;
+          border-radius:50%;
+          position:absolute;
+          top:-14%;
+          left:calc(50% - 50px);
+             }
+      h1{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 30px;
+          font-family:AR JULIAN;
+          color:red;
+        }    
+      .loginbox p{  margin:0;
+          padding: 0;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+      .loginbox input[type="text"], input[type="password"]{
+          border: none;
+          border-bottom: 1px solid #fff;
+          background: transparent;
+          outline:none;
+          height:40px;
+          color:#fff;
+          font-size:16px;
+              }
+      .loginbox input[type="submit"]{
+         margin-top:15px;
+          border: none;
+          outline:none;
+          height:40px;
+          background:#fb2525;
+          color: #fff;
+          font-size:18px;
+          border-radius:20px;
+              }
+      .loginbox input[type="submit"]:hover
+      {    cursor:pointer;
+          background:#ffc107;
+          color:#000;
+      }
+      .loginbox a{   
+          text-decoration:none;
+          font-size:12px;
+          line-height:20px;
+          color: darkgrey;
+      }
+      .loginbox a:hover
+      {  
+        color:#ffc107;
+      }
+      .active{
+        color:#fff;
+        background:#e02626;
+        border-radius:4px;
+      }
+
+
+     .register_button{
+     position:absolute;
+     top:65%;
+     margin-top:20px;
+     width:80%;
+     height:4%;
+     color:black;
+     background-color:yellow;
+     padding-top:10px;
+     padding-left:10px;
+     padding-right:10px;
+     padding-bottom:10px;
+     border-radius:20px;
+     font-size:19px;
+     text-decoration:none;
+      text-align:center;
+     }
+    
+    .register_button:hover {
+
+     color:white;
+     background:#e02626;
+}
+   
+       </style>
+
+  </head>
+  <body>
+    <img class="log">
+    <div class="loginbox">
+    <form action="\login" method="post">
+        {% with issue=get_flashed_messages() %}
+    	{% if issue %} 
+        {% for i in issue %}
+
+         <h1 class="issue"> {{i}} </h1>
+	{% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    <img src="static/images/avatar1.png" class="avatar">    
+    
+    <p> Username</p>
+    <input type="text" name="loginusername" placeholder="Enter Username">
+    <p> Password</p>
+    <input type="password" name="loginpassword" placeholder="Enter password"><br>
+    <input type="submit" name="loginbutton" value="Login">
+    </form>
+    <a href="/register" style="text-decoration:none;"> <label class="register_button">  Register </label> </a>
+   
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/ajax-utils.js"></script>
+      <script src="js/script.js"></script>
+
+
+
+  </body>
+</html>

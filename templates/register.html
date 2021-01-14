@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <title> Register Page</title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+       <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+       <style>
+       body{
+          margin:0;
+          padding:0;
+          background:url("static/images/login_whatsapp.jpeg");
+          background-size: cover;
+          font-family: sans-serif;
+           }
+
+            h1.issue{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 25px;
+          font-family:AR JULIAN;
+          color:red;
+        }  
+
+      .log{  width:1566px;
+          height:696px;
+          
+          }
+      .loginbox{  width: 320px;
+          height: 450px;
+          background: #0d5658;
+          color: #fff;
+          top:12%;
+          left:36%;
+          position:absolute;
+          transform: translate{-50%,-50%}
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity:.7;
+               }
+      .avatar{  width: 100px;
+          height: 100px;
+          border-radius:50%;
+          position:absolute;
+          top:-14%;
+          left:calc(50% - 50px);
+             }
+      h1{    margin:0;
+          padding: 0 0 20px;
+          text-align: center;
+          font-size: 30px;
+          font-family:AR JULIAN;
+          color:yellow;
+        }    
+      .loginbox p{  margin:0;
+          padding: 0;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+      .loginbox input[type="text"], input[type="password"]{
+          border: none;
+          border-bottom: 1px solid #fff;
+          background: transparent;
+          outline:none;
+          height:40px;
+          color:#fff;
+          font-size:16px;
+              }
+      .loginbox input[type="submit"]{
+          border: none;
+          outline:none;
+          height:40px;
+          background:#fb2525;
+          color: #fff;
+          font-size:18px;
+          border-radius:20px;
+              }
+      .loginbox input[type="submit"]:hover
+      {    cursor:pointer;
+          background:#ffc107;
+          color:#000;
+      }
+      .loginbox a{   
+          text-decoration:none;
+          font-size:12px;
+          line-height:20px;
+          color: darkgrey;
+      }
+      .loginbox a:hover
+      {  
+        color:#ffc107;
+      }
+      .active{
+        color:#fff;
+        background:#e02626;
+        border-radius:4px;
+      }
+       </style>
+  </head>
+  <body> 
+   
+
+    <img class="log">
+    <div class="loginbox">
+      
+    <form action="\register" method="post">
+    {% with issue=get_flashed_messages() %}
+    	{% if issue %} 
+        {% for i in issue %}
+
+         <h1 class="issue"> {{i}} </h1>
+	{% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    <img src="static/images/avatar1.png" class="avatar">
+
+
+    <h1>Register Here</h1>
+    
+
+    <p> Email</p>
+    <input type="text" name="email" placeholder="Enter Email">
+    <p> Username</p>
+    <input type="text" name="username" placeholder="Enter Email">
+    <p> Password</p>
+    <input type="password" name="password" placeholder="Enter Password"><br>
+    <p> Confirm Password</p>
+    <input type="password" name="cpassword" placeholder="Enter Password"><br>
+    <input type="submit" name="submit" value="Register">
+    <a href="/">Already have an acoount?Login</a>
+
+    </form>
+    </div>
+    
+    <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/ajax-utils.js"></script>
+      <script src="js/script.js"></script>
+  </body>
+</html>
