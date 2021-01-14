@@ -1,5 +1,5 @@
 pymysql
 requests
-json
+json5
 GoogleNews
 flask
